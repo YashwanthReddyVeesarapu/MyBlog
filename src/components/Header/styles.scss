@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+
+  h1 {
+    font-family: BR;
+    text-transform: lowercase;
+    font-weight: 100;
+  }
+}
