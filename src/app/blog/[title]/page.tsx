@@ -6,7 +6,7 @@ import { title } from "process";
 
 export async function generateStaticParams() {
   let url = apiInstance.getUri() + "blogs";
-  const blogs = await fetch(url, { cache: "no-store" });
+  const blogs = await fetch(url, { cache: "reload" });
 
   const data: any = await blogs.json();
 
@@ -32,7 +32,7 @@ export async function generateMetadata(
 
 export default async function page({ params }: any) {
   let url = apiInstance.getUri() + `blogs/${params.title}`;
-  let blog: any = await fetch(url, { cache: "no-store" });
+  let blog: any = await fetch(url, { cache: "reload" });
   const data = await blog.json();
 
   return (
