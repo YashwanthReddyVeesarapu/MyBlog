@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let dev = false;
+let dev = true;
 let url = "https://api.redash.us/";
 
 if (dev) {
