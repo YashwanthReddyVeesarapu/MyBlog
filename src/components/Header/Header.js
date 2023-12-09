@@ -4,10 +4,15 @@ import "./styles.scss";
 const Header = () => {
   return (
     <header>
-      <div>
-        <h1>Redsols Blog</h1>
+      <div className="left">
+        <h1>Blog</h1>
       </div>
-      <div>Search</div>
+      <div className="middle">
+        <h1>Redsols</h1>
+      </div>
+      <div className="right">
+        <h1>Home</h1>
+      </div>
     </header>
   );
 };

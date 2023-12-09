@@ -1,0 +1,29 @@
+import { MetadataRoute } from "next";
+
+const SERVER_URL = "https://api.redash.us/blogs";
+
+export default async function sitemap() {
+  const call = await fetch(SERVER_URL, { cache: "no-store" });
+  const blogs = await call.json();
+
+  const URL = "https://blog.redsols.us/";
+
+  const blogsSitemap = blogs.map(({ title }: any) => {
+    return {
+      url: URL + "blog/" + title.split(" ").join("-"),
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 1,
+    };
+  });
+
+  return [
+    {
+      url: URL,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 1,
+    },
+    ...blogsSitemap,
+  ];
+}

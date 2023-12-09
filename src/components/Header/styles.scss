@@ -3,10 +3,25 @@ header {
   flex-direction: row;
   justify-content: space-between;
   margin: 10px;
+  border-bottom: 1px solid gray;
 
   h1 {
     font-family: BR;
     text-transform: lowercase;
     font-weight: 100;
+  }
+  div {
+    display: flex;
+    flex: 1;
+  }
+
+  .middle {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .right {
+    justify-content: flex-end;
   }
 }
