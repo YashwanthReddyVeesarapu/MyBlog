@@ -1,5 +1,3 @@
-import { MetadataRoute } from "next";
-
 const SERVER_URL = "https://api.redash.us/blogs";
 
 export default async function sitemap() {
@@ -13,7 +11,7 @@ export default async function sitemap() {
       url: URL + "blog/" + title.split(" ").join("-"),
       lastModified: new Date(),
       changeFrequency: "daily",
-      priority: 1,
+      priority: 0.8,
     };
   });
 
