@@ -24,8 +24,14 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  let title = params.title;
+  title = title
+    .split("-")
+    .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+    .join(" ");
+
   return {
-    title: params.title,
+    title: title,
     description: params.description,
   };
 }
