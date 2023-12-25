@@ -11,7 +11,7 @@ import styles from "../styles.module.scss";
 import React, { useState } from "react";
 import { apiInstance } from "@/utils/apiInstance";
 
-const page = () => {
+const Page = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [info, setInfo] = useState("");
@@ -78,4 +78,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
