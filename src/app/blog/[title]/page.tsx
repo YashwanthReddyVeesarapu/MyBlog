@@ -10,8 +10,6 @@ export async function generateStaticParams() {
 
   const data: any = await blogs.json();
 
-  console.log(data);
-
   return data.map((blog: any) => ({
     title: blog.title.split(" ").join("-"),
     description: blog.description,
@@ -41,7 +39,6 @@ export async function generateMetadata(
 export default async function page({ params }: any) {
   let url = apiInstance.getUri() + `blogs/${params.title}`;
 
-  console.log(url);
   let blog: any = await fetch(url, { cache: "reload" });
   const data = await blog.json();
 
