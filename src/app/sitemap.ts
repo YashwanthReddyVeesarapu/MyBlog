@@ -1,7 +1,7 @@
-const SERVER_URL = "https://api.redash.us/blogs";
+const SERVER_URL = "https://api.redash.us/blogs/";
 
 export default async function sitemap() {
-  const call = await fetch(SERVER_URL, { cache: "no-store" });
+  const call = await fetch(SERVER_URL);
   const blogs = await call.json();
 
   const URL = "https://blog.redsols.us/";
@@ -20,7 +20,7 @@ export default async function sitemap() {
       url: URL,
       lastModified: new Date().toISOString(),
       changeFrequency: "daily",
-      priority: 0.8,
+      priority: 1,
     },
     ...blogsSitemap,
   ];
