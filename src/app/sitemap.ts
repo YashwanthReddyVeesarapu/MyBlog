@@ -9,18 +9,18 @@ export default async function sitemap() {
   const blogsSitemap = blogs.map(({ title }: any) => {
     return {
       url: URL + "blog/" + title.split(" ").join("-"),
-      lastModified: new Date(),
+      lastModified: new Date().toISOString(),
       changeFrequency: "daily",
-      priority: 0.8,
+      priority: 1,
     };
   });
 
   return [
     {
       url: URL,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "daily",
+      priority: 0.8,
     },
     ...blogsSitemap,
   ];
