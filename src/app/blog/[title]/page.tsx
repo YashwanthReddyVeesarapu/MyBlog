@@ -6,9 +6,11 @@ import { title } from "process";
 
 export async function generateStaticParams() {
   let url = apiInstance.getUri() + "blogs";
-  const blogs = await fetch(url, { cache: "reload" });
+  const blogs = await fetch(url, { cache: "no-store" });
 
   const data: any = await blogs.json();
+
+  console.log(data);
 
   return data.map((blog: any) => ({
     title: blog.title.split(" ").join("-"),
@@ -38,6 +40,8 @@ export async function generateMetadata(
 
 export default async function page({ params }: any) {
   let url = apiInstance.getUri() + `blogs/${params.title}`;
+
+  console.log(url);
   let blog: any = await fetch(url, { cache: "reload" });
   const data = await blog.json();
 
