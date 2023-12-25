@@ -28,6 +28,12 @@ const Page = () => {
         description,
         info,
       })
+      .then(() => {
+        alert("Success");
+        setTitle("");
+        setDescription("");
+        setInfo("");
+      })
       .catch((e) => alert(e));
     setLoading(false);
   };

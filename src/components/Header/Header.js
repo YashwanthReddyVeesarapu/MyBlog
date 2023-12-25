@@ -1,17 +1,20 @@
 import React from "react";
 import "./styles.scss";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <header>
       <div className="left">
-        <h1>Blog</h1>
+        <Link href={"/"}>Blog</Link>
       </div>
       <div className="middle">
-        <h1>Redsols</h1>
+        <Link target="_blank" href={"https://www.redsols.us/"}>
+          Redsols
+        </Link>
       </div>
       <div className="right">
-        <h1>Home</h1>
+        <Link href={"/"}>Home</Link>
       </div>
     </header>
   );

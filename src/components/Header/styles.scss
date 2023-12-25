@@ -5,10 +5,12 @@ header {
   margin: 10px;
   border-bottom: 1px solid gray;
 
-  h1 {
+  h1,
+  a {
     font-family: BR;
     text-transform: lowercase;
     font-weight: 100;
+    font-size: 2em;
   }
   div {
     display: flex;
