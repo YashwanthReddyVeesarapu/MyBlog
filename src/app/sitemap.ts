@@ -8,7 +8,7 @@ export default async function sitemap() {
 
   const blogsSitemap = blogs.map(({ title }: any) => {
     return {
-      url: URL + "blog/" + title.split(" ").join("-"),
+      url: URL + "blog/" + title.split(" ").join("-") + "/",
       lastModified: new Date().toISOString(),
       changeFrequency: "daily",
       priority: 1,
