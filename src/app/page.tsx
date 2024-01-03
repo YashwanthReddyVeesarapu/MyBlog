@@ -2,6 +2,7 @@ import styles from "./page.module.scss";
 
 import MainLayout from "./../layouts/MainLayout";
 import { apiInstance } from "@/utils/apiInstance";
+import Link from "next/link";
 
 type Blog = {
   info: string;
@@ -18,12 +19,12 @@ export default async function Home() {
         <p>Welcome to Blog by REDSOLS</p>
         <div>
           {data.map((element: Blog) => (
-            <a
+            <Link
               key={element.title}
-              href={`blog/${element.title.split(" ").join("-")}`}
+              href={`blog/${element.title.split(" ").join("-")}/`}
             >
               {element.title}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -6,10 +6,13 @@ export default async function sitemap() {
 
   const URL = "https://blog.redsols.us/";
 
+  const currentDate = new Date();
+  const formattedDate = currentDate.toISOString().split("T")[0];
+
   const blogsSitemap = blogs.map(({ title }: any) => {
     return {
       url: URL + "blog/" + title.split(" ").join("-") + "/",
-      lastModified: new Date().toISOString(),
+      lastModified: formattedDate,
       changeFrequency: "daily",
       priority: 1,
     };
@@ -18,7 +21,7 @@ export default async function sitemap() {
   return [
     {
       url: URL,
-      lastModified: new Date().toISOString(),
+      lastModified: formattedDate,
       changeFrequency: "daily",
       priority: 1,
     },
