@@ -13,8 +13,7 @@ export default async function sitemap() {
     return {
       url: URL + "blog/" + title.split(" ").join("-") + "/",
       lastModified: formattedDate,
-      changeFrequency: "daily",
-      priority: 1,
+      priority: 0.8,
     };
   });
 
@@ -23,7 +22,6 @@ export default async function sitemap() {
       url: URL,
       lastModified: formattedDate,
       changeFrequency: "daily",
-      priority: 1,
     },
     ...blogsSitemap,
   ];
