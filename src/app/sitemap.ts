@@ -6,21 +6,22 @@ export default async function sitemap() {
 
   const URL = "https://blog.redsols.us/";
 
-  const currentDate = new Date();
-  const formattedDate = currentDate.toISOString().split("T")[0];
+  // const currentDate = new Date();
+  // const formattedDate = currentDate.toISOString().split("T")[0];
 
   const blogsSitemap = blogs.map(({ title }: any) => {
     return {
       url: URL + "blog/" + title.split(" ").join("-") + "/",
-      lastModified: formattedDate,
+      lastModified: new Date(),
       priority: 0.8,
+      changeFrequency: "weekly",
     };
   });
 
   return [
     {
       url: URL,
-      lastModified: formattedDate,
+      lastModified: new Date(),
       changeFrequency: "daily",
     },
     ...blogsSitemap,
